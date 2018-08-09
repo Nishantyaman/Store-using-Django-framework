@@ -1,0 +1,47 @@
+{% load static %} 
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Product Information</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.css" />
+	<title>Product Information</title>
+	<link rel="stylesheet" type="text/css" href="{% static "product/css/style_detail.css" %}">
+</head>
+<body>
+	<section class="hero is-primary">
+        <div class="hero-body">
+            <div class="container">
+                <h1 class="title"><a href="{% url 'home' %}"> Store</a>
+                </h1>
+            </div>
+        </div>
+    </section>
+	<div class="column is-offset-4 is-4 detailss">
+                    {% for product in product_data %}
+                    	
+                    <div class="box">
+                        <article class="media">
+                            <div class="media-content">
+                                <div class="content">
+                                    <p>
+                                        <span class="title"><strong>Title :</strong>{{ product.title }}</span>
+                                        <br>
+                                        <span class="price"><strong>Price :</strong>{{ product.price }}</span>
+                                        <br>
+                                        <span class="description"><strong>Description:</strong>{{ product.description }}</span>
+                                        <br> 
+                                         <span class="category"><strong>Category:</strong>{{ product.category }}</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                    {% endfor %}
+                </div>
+
+</body>
+</html>

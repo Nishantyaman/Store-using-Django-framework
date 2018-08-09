@@ -1,0 +1,50 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Product Information</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+        <div class="container">
+                <ul>
+                    <li class="current"><a href="index.html">Home</a></li>
+                    <li><a href="add.html">Add a Product</a></li>
+                    <li><a href="detail.html">Product details</a></li>
+                </ul>
+        </div>
+
+    <section>
+        <div class="column is-offset-4 is-4">
+           <form action="/signup/" method="post">
+             {% csrf_token %}
+             {{ form }}
+             <input type="submit" value="Submit" />
+           </form>     
+
+             <!--  <form method="POST">
+                        {% csrf_token %}
+                        <div class="field has-addons">
+                            <div class="control is-expanded">
+                                {{ form.name }}
+                            </div>
+                            <div class="control">
+                                <button type="submit" class="button is-info">
+                                    Add Item
+                                </button>
+                            </div>
+                        </div>
+                    </form> -->
+
+        </div>
+    </section>
+
+    <footer class="footer">
+    </footer>
+</body>
+</html>
